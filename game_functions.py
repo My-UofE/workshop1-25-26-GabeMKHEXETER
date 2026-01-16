@@ -17,4 +17,9 @@ def check_higher_lower(current_val, next_val, user_input):
 
 # function to be used in game_3: Hangman
 def process_guess(letter, board, word):
-    pass
+    #letter = user input
+    #word = selected word from .txt file
+    #board = missing letters
+    #check if the letter exists in the word at ALL 
+    #replace blank spaces in board with letter if it exists
+    #return boolean
