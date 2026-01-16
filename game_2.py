@@ -13,22 +13,22 @@ def play_game_2(min_x=0, max_x=20):
     sequence = []
 
     x = random.randint(min_x,max_x)
-    sequence.append(x)
+    sequence.append(x) #random number entered in the array
     game_ended = False
 
     while game_ended == False:
         print()
-        print(f"The current value is: {sequence[-1]}")
+        print(f"The current value is: {sequence[-1]}") #newest value in the array
         print("Do you think the next number going to be higher (h) or lower (l)?")
         user_input = "NA"
         while user_input not in ["h", "l"]:
-            user_input = input("Enter h or l:\n> ")
+            user_input = input("Enter h or l:\n> ") #repeated ask until user inputs correctly
         
-        current_val = sequence[-1]
+        current_val = sequence[-1] 
         
         next_val = current_val
         while next_val == current_val:
-            next_val  = random.randint(min_x,max_x)
+            next_val  = random.randint(min_x,max_x) #between 0 and 20
 
         sequence.append(next_val)
 
@@ -37,7 +37,7 @@ def play_game_2(min_x=0, max_x=20):
 
         result = check_higher_lower(current_val, next_val, user_input)
 
-        if result == True:
+        if result == True: #boolean output of function
             print("Well done - you survived!")
             print(f"Sequence so far has {len(sequence)} terms:")
             print(sequence)
