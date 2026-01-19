@@ -2,7 +2,16 @@ import random
 
 # function to be used by game_1: Guess the Number
 def pick_value(poss_values):
-    x = random.choice(poss_values)   
+    #possible values = list
+    #"better, more efficient way of finding values" = binary search :D
+    #find midpoint of list everytime - erasure happens in actual game code
+    length = len(poss_values) #dynamic >:3
+    if length % 2 == 1: #odd amount of values
+        value = (length // 2) + 1 #round up - but kinda weird 
+        x = poss_values[value]
+    elif length % 2 == 0: #even 
+        value = length // 2
+        x = poss_values[value]
     return x
 
 # function to be used in game_2: Higher or Lower
