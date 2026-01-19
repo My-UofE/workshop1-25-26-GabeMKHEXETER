@@ -23,3 +23,14 @@ def process_guess(letter, board, word):
     #check if the letter exists in the word at ALL 
     #replace blank spaces in board with letter if it exists
     #return boolean
+    in_word = False #start with false
+    for i in range(0,len(board)):
+        if word[i] == letter:
+            board[i] = letter
+            in_word = True
+    if in_word == True:
+        print("Well Done!",letter,"was in the word!")
+        return (in_word)
+    else:
+        print("Sorry!",letter,"was not in word")
+        return(in_word)
